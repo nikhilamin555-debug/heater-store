@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Room Heater | Instant Warmth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        [x-cloak] { display: none !important; }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans smooth-scroll">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter text-orange-600">URTRAY</div>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#" class="hover:text-orange-600">Home</a>
+                <a href="#specs" class="hover:text-orange-600">Specifications</a>
+                <a href="#reviews" class="hover:text-orange-600">Reviews</a>
+            </nav>
+            <a href="YOUR_SUPERBREEZE_LINK" class="bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-orange-700 transition">ORDER NOW</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+            
+            <div x-data="{ activeImage: 0, images: [
+                'https://images.unsplash.com/photo-1614035616523-952372d6f830?auto=format&fit=crop&q=80&w=800', 
+                'https://images.unsplash.com/photo-1544374921-93c6628b0660?auto=format&fit=crop&q=80&w=800',
+                'https://images.unsplash.com/photo-1527334134460-f21a05ef52b3?auto=format&fit=crop&q=80&w=800'
+            ] }">
+                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <template x-for="(img, index) in images" :key="index">
+                        <img x-show="activeImage === index" :src="img" class="w-full h-full object-cover transition duration-500">
+                    </template>
+                </div>
+                <div class="flex gap-4 mt-4">
+                    <template x-for="(img, index) in images" :key="index">
+                        <button @click="activeImage = index" 
+                                :class="activeImage === index ? 'border-orange-600' : 'border-transparent'"
+                                class="w-20 h-20 border-2 rounded-md overflow-hidden bg-white">
+                            <img :src="img" class="w-full h-full object-cover">
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center">
+                <div class="flex items-center space-x-2 mb-2 text-orange-600 font-bold text-sm uppercase tracking-widest">
+                    <span>Best Seller</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Fast-Heating Portable Mini Room Heater</h1>
+                <div class="flex items-center mb-4">
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-500 font-medium">(2,450+ Happy Customers)</span>
+                </div>
+                
+                <div class="flex items-baseline space-x-4 mb-6">
+                    <span class="text-3xl font-black text-gray-900">₹999.00</span>
+                    <span class="text-xl text-gray-400 line-through">₹1,999.00</span>
+                    <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">SAVE 50%</span>
+                </div>
+
+                <ul class="space-y-3 mb-8 text-gray-600">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Heats up in just 3 seconds</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Low noise & Energy efficient</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Auto-shutoff safety feature</li>
+                </ul>
+
+                <a href="YOUR_SUPERBREEZE_LINK" class="w-full bg-orange-600 text-white text-center py-4 rounded-xl text-lg font-black hover:bg-orange-700 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    YES, I WANT TO STAY WARM
+                </a>
+                <p class="text-center text-xs text-gray-400 mt-4 italic">🔥 Hurry! Only 14 units left in stock today.</p>
+            </div>
+        </div>
+
+        <section class="py-16 border-t border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">PTC Ceramic Tech</h3>
+                    <p class="text-gray-500 text-sm">Advanced heating element for instant warmth without high bills.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Flame Retardant</h3>
+                    <p class="text-gray-500 text-sm">Built with V0-rated heat resistant materials for ultimate safety.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Eco-Silent Mode</h3>
+                    <p class="text-gray-500 text-sm">Operates under 40dB. Perfect for sleeping or deep focus work.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="specs" class="py-16 bg-gray-900 text-white rounded-3xl px-8 md:px-16 overflow-hidden relative">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold mb-8">Technical Specifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+                    <div class="flex justify-between border-b border-gray-700 py-3">
+                        <span class="text-gray-400">Model</span>
+                        <span class="font-medium">TurboHeat 500</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-700 py-3">
+                        <span class="text-gray-400">Power</span>
+                        <span class="font-medium">500 Watts / 220V</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-700 py-3">
+                        <span class="text-gray-400">Heating Area</span>
+                        <span class="font-medium">Up to 250 sq. ft.</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-700 py-3">
+                        <span class="text-gray-400">Weight</span>
+                        <span class="font-medium">450g (Ultra Portable)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/20 blur-3xl rounded-full -mr-20 -mt-20"></div>
+        </section>
+
+        <section id="reviews" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Trusted by 2,000+ Happy Customers</h2>
+            <div class="columns-1 md:columns-3 gap-6 space-y-6">
+                <div class="break-inside-avoid bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 text-xs mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">"Absolutely amazing! My home office was freezing, and this little guy warmed it up in minutes. Very quiet."</p>
+                    <div class="font-bold text-sm">— Rahul S.</div>
+                </div>
+                <div class="break-inside-avoid bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 text-xs mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">"Compact and powerful. I take it with me when I travel. Best purchase of the winter."</p>
+                    <div class="font-bold text-sm">— Priya K.</div>
+                </div>
+                <div class="break-inside-avoid bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 text-xs mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">"The safety shut-off works perfectly. It tipped over by accident and stopped immediately."</p>
+                    <div class="font-bold text-sm">— Ankit V.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 pb-32">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="text-xl font-black mb-4">URTRAY</div>
+            <div class="flex justify-center space-x-6 text-sm text-gray-500 mb-8">
+                <a href="#">Shipping Policy</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Contact Support</a>
+            </div>
+            <p class="text-xs text-gray-400">© 2026 Urtray India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 z-[100]">
+        <a href="YOUR_SUPERBREEZE_LINK" class="block w-full bg-orange-600 text-white text-center py-4 rounded-xl font-bold shadow-xl">
+            ORDER NOW - ₹999
+        </a>
+    </div>
+
+</body>
+</html>
